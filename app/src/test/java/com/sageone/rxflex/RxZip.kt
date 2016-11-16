@@ -57,6 +57,7 @@ class RxZip {
 
         Observable.zip(a, b, c, d) { a1, b1, c1, d1 -> Result(a1, b1, c1, d1) }.toBlocking().subscribe({ System.out.println(it) }, { System.out.println("Error") }, { System.out.println("Complete") })
     }
+
+    data class Result(val a1: String, val b1: String, val c1: String, val d1: String)
 }
 
-data class Result(val a1: String, val b1: String, val c1: String, val d1: String)
