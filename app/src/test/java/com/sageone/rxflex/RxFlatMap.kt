@@ -31,10 +31,11 @@ class RxFlatMap {
     }
 
     companion object {
-        var count : Int = 0
+        var count: Int = 0
         fun query(text: String): Observable<List<String>> {
             return Observable.just(listOf("${text}1", "${text}2", "${text}3"))
         }
+
         fun title(url: String): Observable<String> {
             return Observable.just("$url-title").delay((++count).toLong(), TimeUnit.SECONDS)
         }
