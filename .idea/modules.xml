@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RxFlex.iml" filepath="$PROJECT_DIR$/RxFlex.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bug-free-lamp.iml" filepath="$PROJECT_DIR$/bug-free-lamp.iml" />
     </modules>
   </component>
 </project>
