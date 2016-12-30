@@ -19,18 +19,18 @@ class NetworkSync {
 
     fun syncTransactions(): Observable<Transaction> {
         return Observable.zip(transactions(), accounts(), accountTypes(), {
-            t, a, at ->
-            t.map { transaction ->
+            txs, acts, atypes ->
+            txs.map { transaction ->
                 Transaction(transaction.id,
                         transaction.title,
-                        a.findId(transaction.accountId).let {
+                        acts.findId(transaction.accountId).let {
                             account ->
-                            Account(account.id, account.name, at.findId(account.typeId).let {
+                            Account(account.id, account.name, atypes.findId(account.typeId).let {
                                 AccountType(it.id)
                             })
                         }, transaction.amount)
             }
-        }).flatMap { Observable.from(it) }
+        }).flatMapIterable { it }
     }
 
     companion object {
